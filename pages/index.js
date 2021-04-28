@@ -4,7 +4,7 @@ import { Title, SubTitle } from '@c/Title'
 
 export default function Home() {
   return (
-    <Layout title="next-graphcms-shows / Home" maxWidth="800px">
+    <Layout title="next-graphcms-shows / Home">
       <Title>next-graphcms-shows</Title>
 
       <SubTitle>
