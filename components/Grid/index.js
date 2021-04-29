@@ -45,6 +45,41 @@ const StyledGrid = styled.div`
     flex-direction: row;
   }
 `
+const StyledToggle = styled.div`
+  display: inline-block;
+  border: 1px solid var(--gallery-grey);
+  border-radius: 10px;
+`
+const Icon = styled.i`
+  display: inline-block;
+  background-image: url(${(p) => p.imageUrl});
+  width: 1.5em;
+  height: 1.5em;
+  margin: .3em .45em;
+  filter: ${props => props.selectedStyle ? "invert(1)" : "invert(0)"};
+`
+const DividerStyle = css`
+  display: inline-block;
+  width: 1px;
+  height: 1.5em;
+  background-color: white;
+  margin: .3em .45em;
+`
+
+export function Toggle({ icons = [], onClick, selectedState }) {
+  const selectedStyle = true
+
+  if (3 > icons.length > 0) {
+    return(
+      <StyledToggle onClick={onClick}>
+        <Icon  {... selectedState === icons[0] ? {selectedStyle} : ' '} imageUrl={`/${icons[0]}.svg`}/>
+        <span css={DividerStyle}/>
+        <Icon {... selectedState === icons[1] ? {selectedStyle} : ' '} imageUrl={`/${icons[1]}.svg`}/>
+      </StyledToggle>
+    )
+  }
+  return null
+}
 
 export function Card({ children, header, href, title }) {
   return href ? (
