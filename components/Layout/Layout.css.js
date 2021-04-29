@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ReactMarkdown from 'react-markdown'
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -11,7 +12,6 @@ export const Container = styled.div`
   color: ${(p) => p.color};
   padding: ${(p) => p.padding};
 `
-
 export const Main = styled.main`
   flex: 1;
   display: flex;
@@ -20,7 +20,6 @@ export const Main = styled.main`
   align-items: ${(p) => p.alignItems};
   max-width: ${(p) => p.maxWidth};
 `
-
 export const Footer = styled.footer`
   width: 100%;
   max-width: 700px;
@@ -33,5 +32,12 @@ export const Footer = styled.footer`
   a {
     margin-left: 4px;
     text-decoration: underline;
+  }
+`
+export const Markdown = styled(ReactMarkdown)`
+  img {
+    width: 100%;
+    border-radius: 20px;
+    border: 4px solid currentColor;
   }
 `
